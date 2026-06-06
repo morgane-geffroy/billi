@@ -664,7 +664,7 @@
 
     /* ─── SERVICES ────────────────────────────────────────────── */
     .services {
-      padding: 120px 0;
+      padding: 72px 0 96px;
       background: var(--color-bg-warm);
     }
 
@@ -743,17 +743,20 @@
 
     .service-icon {
       width: 56px; height: 56px;
-      background: var(--color-mint);
-      border-radius: var(--radius-card);
+      background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 26px;
       margin-bottom: 28px;
     }
+    .service-icon img {
+      width: 65px; height: 65px;
+      object-fit: contain;
+    }
 
     .service-card.featured .service-icon {
-      background: rgba(159, 232, 112, 0.15);
+      background: transparent;
     }
 
     .service-card-title {
@@ -1286,7 +1289,7 @@
     .tabs-switcher {
       display: flex;
       gap: 6px;
-      margin-bottom: 56px;
+      margin-bottom: 36px;
       background: var(--color-light-surface);
       padding: 5px;
       border-radius: var(--radius-pill);
@@ -1317,6 +1320,8 @@
       background: rgba(14,15,12,0.08);
       color: var(--color-near-black);
     }
+    .tab-btn img { filter: brightness(0); transition: filter 0.2s; }
+    .tab-btn.active img { filter: invert(1) brightness(2); }
 
     .tab-content { display: none; }
 
@@ -1419,6 +1424,38 @@
 
     .pitch-goal-item:last-child { border-bottom: none; }
 
+    .goal-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: var(--color-mint);
+      border-radius: 1px;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .certif-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: var(--color-mint);
+      border-radius: 1px;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+      margin-top: 1px;
+      vertical-align: middle;
+      margin-right: 2px;
+    }
+
+    .section-star {
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: var(--color-mint);
+      border-radius: 1px;
+      transform: rotate(45deg);
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+
     .pitch-audience {
       margin-top: 40px;
       padding: 32px;
@@ -1466,15 +1503,26 @@
     }
     .pitch-audience-title .aud-word { display: inline-block; }
 
-    .pitch-cta-note {
+    .pitch-cta-note { display: none; }
+
+    .pitch-cta-btn {
+      display: block;
       margin-top: 32px;
       font-size: 16px;
       font-weight: 600;
       color: var(--color-dark-green);
       text-align: center;
-      padding: 20px;
+      padding: 20px 24px;
       background: rgba(22,51,0,0.06);
       border-radius: var(--radius-card);
+      text-decoration: none;
+      border: 1.5px solid transparent;
+      transition: background 0.18s, border-color 0.18s, color 0.18s;
+    }
+    .pitch-cta-btn:hover {
+      background: rgba(22,51,0,0.11);
+      border-color: var(--color-dark-green);
+      color: var(--color-near-black);
     }
 
     /* ─── FORMATIONS ─────────────────────────────────────────── */
@@ -1675,6 +1723,11 @@
       text-align: center;
       margin-top: 2px;
     }
+    .diff-icon img {
+      width: 45px; height: 45px;
+      object-fit: contain;
+      filter: invert(1) brightness(2);
+    }
 
     .diff-name {
       font-size: 15px;
@@ -1682,6 +1735,67 @@
       color: rgba(255,255,255,0.85);
       line-height: 1.5;
     }
+    .diff-kw {
+      color: #7fff00;
+      font-weight: 700;
+    }
+
+    /* ─── FAB ────────────────────────────────────────────────── */
+    .contact-fab {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--color-near-black);
+      color: var(--color-mint);
+      border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.22);
+      z-index: 900;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .contact-fab:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(0,0,0,0.28); }
+    .contact-fab[hidden] { display: none; }
+
+    /* ─── MODAL ──────────────────────────────────────────────── */
+    .contact-modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(14,15,12,0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .contact-modal-overlay.is-open { opacity: 1; }
+    .contact-modal-overlay[hidden] { display: none; }
+
+    .contact-modal-card {
+      background: var(--color-bg);
+      border-radius: var(--radius-large);
+      padding: 36px;
+      width: 100%; max-width: 480px;
+      position: relative;
+      transform: translateY(16px);
+      transition: transform 0.25s ease;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .contact-modal-overlay.is-open .contact-modal-card { transform: translateY(0); }
+
+    .contact-modal-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 32px; height: 32px;
+      background: rgba(14,15,12,0.06);
+      border: none; border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-near-black);
+      transition: background 0.15s;
+    }
+    .contact-modal-close:hover { background: rgba(14,15,12,0.12); }
 
     /* ─── RESPONSIVE ──────────────────────────────────────────── */
     @media (max-width: 1100px) {
@@ -1881,7 +1995,7 @@
         <li><a href="#testimonials">Témoignages</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="#contact" class="btn btn-primary" style="font-size:15px; padding:10px 20px;">Prendre RDV</a>
+        <a href="#" class="btn btn-primary open-contact-modal" style="font-size:15px; padding:10px 20px;">Prendre RDV</a>
       </div>
     </div>
   </nav>
@@ -2011,19 +2125,18 @@
   <!-- ─── SERVICES ──────────────────────────────────────────── -->
   <section class="services" id="services">
     <div class="container">
-      <span class="section-label reveal">✦ Offres</span>
       <h2 class="section-title reveal">Un accompagnement<br/>à votre mesure.</h2>
       <p class="section-sub reveal">Que vous soyez en quête de sens ou que votre entreprise cherche à renforcer son management, je m'adapte à vos enjeux.</p>
 
       <div class="tabs-switcher reveal">
-        <button class="tab-btn active" data-tab="particulier">👤 Vous êtes un particulier</button>
-        <button class="tab-btn" data-tab="entreprise">🏢 Vous êtes une entreprise</button>
+        <button class="tab-btn active" data-tab="particulier">Vous êtes un particulier</button>
+        <button class="tab-btn" data-tab="entreprise">Vous êtes une entreprise</button>
       </div>
 
       <!-- ── PARTICULIER ─────────────────────────────────────── -->
       <div class="tab-content active" id="tab-particulier">
 
-        <div class="pitch-block">
+        <div class="pitch-block" id="pitch-block-part">
           <div class="pitch-text">
             <p>Aujourd'hui, beaucoup de personnes avancent dans leur vie professionnelle avec des doutes, une perte de sens ou l'impression de ne plus être à leur place.</p>
             <p>Certaines ne savent plus quelle direction prendre. D'autres ont des envies de reconversion, d'évolution ou de création d'entreprise, mais n'osent pas passer à l'action.</p>
@@ -2039,36 +2152,36 @@
           </div>
           <div class="pitch-goals">
             <p class="pitch-goals-title">Mon objectif : vous aider à</p>
-            <div class="pitch-goal-item"><span>✨</span> Clarifier ce que vous voulez vraiment</div>
-            <div class="pitch-goal-item"><span>✨</span> Reprendre confiance en vos capacités</div>
-            <div class="pitch-goal-item"><span>✨</span> Dépasser vos blocages</div>
-            <div class="pitch-goal-item"><span>✨</span> Oser passer à l'action</div>
-            <div class="pitch-goal-item"><span>✨</span> Construire un projet professionnel qui vous ressemble</div>
+            <div class="pitch-goal-item goals-item"><span class="goal-dot"></span> Clarifier ce que vous voulez vraiment</div>
+            <div class="pitch-goal-item goals-item"><span class="goal-dot"></span> Reprendre confiance en vos capacités</div>
+            <div class="pitch-goal-item goals-item"><span class="goal-dot"></span> Dépasser vos blocages</div>
+            <div class="pitch-goal-item goals-item"><span class="goal-dot"></span> Oser passer à l'action</div>
+            <div class="pitch-goal-item goals-item"><span class="goal-dot"></span> Construire un projet professionnel qui vous ressemble</div>
           </div>
         </div>
 
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">🔍</div>
+            <div class="service-icon"><img src="illustrations/search-user-3.svg" alt="Bilan de compétences"></div>
             <h3 class="service-card-title">Bilan de compétences</h3>
             <p class="service-card-desc">Un accompagnement structuré pour faire le point sur votre parcours, identifier vos forces, clarifier vos aspirations et construire un projet professionnel solide et réaliste.</p>
             <span class="service-tag">Finançable CPF</span>
           </div>
           <div class="service-card">
-            <div class="service-icon">🎯</div>
+            <div class="service-icon"><img src="illustrations/showing-strength-2.svg" alt="Coaching individuel"></div>
             <h3 class="service-card-title">Coaching individuel</h3>
             <p class="service-card-desc">Un suivi personnalisé pour lever vos blocages, retrouver confiance et passer à l'action. Reconversion, prise de poste, développement du leadership — on avance ensemble.</p>
             <span class="service-tag">Sur mesure</span>
           </div>
         </div>
 
-        <div class="pitch-audience">
+        <div class="pitch-audience" id="pitch-audience-part">
           <p class="pitch-audience-title">J'accompagne notamment</p>
           <div class="audience-grid">
-            <div class="audience-item">Personnes en reconversion ou questionnement professionnel</div>
-            <div class="audience-item">Entrepreneurs dans le lancement de leur activité</div>
-            <div class="audience-item">Managers ou salariés prenant un nouveau poste</div>
-            <div class="audience-item">Personnes souhaitant développer leur leadership et leur confiance</div>
+            <div class="audience-item audience-item-reveal">Personnes en reconversion ou questionnement professionnel</div>
+            <div class="audience-item audience-item-reveal">Entrepreneurs dans le lancement de leur activité</div>
+            <div class="audience-item audience-item-reveal">Managers ou salariés prenant un nouveau poste</div>
+            <div class="audience-item audience-item-reveal">Personnes souhaitant développer leur leadership et leur confiance</div>
           </div>
         </div>
 
@@ -2086,34 +2199,34 @@
           </div>
           <div class="pitch-goals">
             <p class="pitch-goals-title">Concrètement, cela permet de</p>
-            <div class="pitch-goal-item"><span>✦</span> Fluidifier le management au quotidien</div>
-            <div class="pitch-goal-item"><span>✦</span> Renforcer l'engagement et l'autonomie des équipes</div>
-            <div class="pitch-goal-item"><span>✦</span> Sécuriser les prises de poste et transitions managériales</div>
-            <div class="pitch-goal-item"><span>✦</span> Améliorer la performance collective sans épuiser les équipes</div>
+            <div class="pitch-goal-item"><span class="goal-dot"></span> Fluidifier le management au quotidien</div>
+            <div class="pitch-goal-item"><span class="goal-dot"></span> Renforcer l'engagement et l'autonomie des équipes</div>
+            <div class="pitch-goal-item"><span class="goal-dot"></span> Sécuriser les prises de poste et transitions managériales</div>
+            <div class="pitch-goal-item"><span class="goal-dot"></span> Améliorer la performance collective sans épuiser les équipes</div>
           </div>
         </div>
 
         <div class="services-grid">
           <div class="service-card">
-            <div class="service-icon">📚</div>
+            <div class="service-icon"><img src="illustrations/student-studying.svg" alt="Formations"></div>
             <h3 class="service-card-title">Formations management & posture professionnelle</h3>
             <p class="service-card-desc">Des formations sur mesure pour développer la posture managériale, l'intelligence émotionnelle, prévenir le burnout et renforcer la cohésion d'équipe. Certifiées Qualiopi, finançables OPCO.</p>
             <span class="service-tag">Finançable OPCO</span>
           </div>
           <div class="service-card">
-            <div class="service-icon">🌱</div>
+            <div class="service-icon"><img src="illustrations/grow-plants.svg" alt="RSE QVT"></div>
             <h3 class="service-card-title">RSE / Qualité de vie au travail</h3>
             <p class="service-card-desc">Un accompagnement centré sur le bien-être, la prévention des risques psychosociaux et le développement d'une culture d'entreprise bientraitante et performante.</p>
             <span class="service-tag">QVT & RSE</span>
           </div>
           <div class="service-card">
-            <div class="service-icon">🧭</div>
+            <div class="service-icon"><img src="illustrations/strategy.svg" alt="Coaching managers"></div>
             <h3 class="service-card-title">Coaching managers & dirigeants</h3>
             <p class="service-card-desc">Un accompagnement individuel pour renforcer la posture, le leadership et l'efficacité au quotidien. Pour les managers en prise de poste, en transition ou souhaitant gagner en impact.</p>
             <span class="service-tag">Individuel 1:1</span>
           </div>
           <div class="service-card">
-            <div class="service-icon">🤝</div>
+            <div class="service-icon"><img src="illustrations/business-deal.svg" alt="Coaching équipe"></div>
             <h3 class="service-card-title">Coaching d'équipe & bilan de compétences</h3>
             <p class="service-card-desc">Coaching collectif pour renforcer la cohésion et la dynamique d'équipe. Bilan de compétences disponible pour les collaborateurs, dans une démarche RH ou individuelle.</p>
             <span class="service-tag">Collectif & CPF</span>
@@ -2160,13 +2273,13 @@
               <p class="formation-desc">Centré sur la posture, la communication et la qualité de la relation dans l'accompagnement du public et des équipes.</p>
             </div>
             <div class="formation-card formation-card-cta">
-              <p>👉 Contactez-moi pour recevoir le catalogue complet ou construire une solution sur mesure adaptée à vos enjeux.</p>
-              <a href="mailto:billitis@billi-consulting.com" class="btn btn-primary" style="font-size:14px; padding:10px 20px; flex-shrink:0; position:relative;">Demander le catalogue</a>
+              <p>→ Contactez-moi pour recevoir le catalogue complet ou construire une solution sur mesure adaptée à vos enjeux.</p>
+              <a href="#" class="btn btn-primary open-contact-modal" style="font-size:14px; padding:10px 20px; flex-shrink:0; position:relative;">Demander le catalogue</a>
             </div>
           </div>
         </div>
 
-        <p class="pitch-cta-note">👉 Je propose un premier échange gratuit pour analyser vos enjeux et identifier les leviers prioritaires.</p>
+        <a href="#" class="pitch-cta-btn open-contact-modal">→ Je propose un premier échange gratuit pour analyser vos enjeux et identifier les leviers prioritaires.</a>
 
       </div>
 
@@ -2178,13 +2291,13 @@
     <div class="container">
       <div class="process-header">
         <div>
-          <span class="section-label reveal">✦ Comment ça marche</span>
+          <span class="section-label reveal"><span class="section-star"></span> Comment ça marche</span>
           <h2 class="section-title reveal">Simple.<br/>Efficace.<br/><em>Concret.</em></h2>
           <p class="section-sub reveal">Pas de méthodo absconse. Une approche directe qui respecte votre temps et votre intelligence.</p>
         </div>
         <div class="process-right reveal">
           <div class="process-card">
-            <p class="process-card-label">✦ Témoignage</p>
+            <p class="process-card-label"><span class="section-star"></span> Témoignage</p>
             <p class="process-card-quote">"En 3 sessions avec Billi., j'ai obtenu plus de clarté sur ma carrière qu'en 2 ans à y réfléchir seul."</p>
             <div class="process-card-author">
               <div class="process-author-avatar"><img src="https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Marc D."/></div>
@@ -2235,16 +2348,16 @@
     <div class="container">
       <div class="about-layout">
         <div class="about-left">
-          <span class="section-label reveal">✦ Pourquoi Billi Consulting ?</span>
+          <span class="section-label reveal"><span class="section-star"></span> Pourquoi Billi Consulting ?</span>
           <h2 class="section-title reveal">Une approche<br/>humaine,<br/>concrète.</h2>
           <p class="about-intro reveal">Passionnée par les relations humaines, j'ai évolué plusieurs années au sein de la branche Famille de la Sécurité sociale, où j'ai managé des équipes et accompagné des managers dans des contextes parfois complexes, avec de forts enjeux humains, organisationnels et de performance.</p>
           <p class="about-intro reveal">Cette expérience de terrain m'a permis de développer une approche à la fois humaine, structurée et concrète de l'accompagnement.</p>
           <div class="about-certifs reveal">
             <p class="about-certifs-title">Certifications & diplômes</p>
-            <div class="certif-item">✨ Diplômée d'une licence en management</div>
-            <div class="certif-item">✨ Certifiée Consultante en bilan de compétences RNCP</div>
-            <div class="certif-item">✨ Titulaire d'un Master en coaching professionnel RNCP</div>
-            <div class="certif-item">✨ Certifiée Qualiopi</div>
+            <div class="certif-item"><span class="certif-dot"></span> Diplômée d'une licence en management</div>
+            <div class="certif-item"><span class="certif-dot"></span> Certifiée Consultante en bilan de compétences RNCP</div>
+            <div class="certif-item"><span class="certif-dot"></span> Titulaire d'un Master en coaching professionnel RNCP</div>
+            <div class="certif-item"><span class="certif-dot"></span> Certifiée Qualiopi</div>
             <p class="certif-note">Accompagnements et formations finançables via les OPCO et le CPF selon les dispositifs.</p>
           </div>
         </div>
@@ -2252,24 +2365,24 @@
           <div class="differentiators">
             <h3 class="diff-title">Ce qui me différencie</h3>
             <div class="diff-item">
-              <div class="diff-icon">🎯</div>
-              <p class="diff-name">Des accompagnements entièrement sur mesure</p>
+              <div class="diff-icon"><img src="illustrations/marketing-target.svg" alt=""></div>
+              <p class="diff-name">Des accompagnements entièrement <strong class="diff-kw">sur mesure</strong></p>
             </div>
             <div class="diff-item">
-              <div class="diff-icon">⚡</div>
-              <p class="diff-name">Une approche active et participative</p>
+              <div class="diff-icon"><img src="illustrations/speed-go-fast.svg" alt=""></div>
+              <p class="diff-name">Une approche <strong class="diff-kw">active et participative</strong></p>
             </div>
             <div class="diff-item">
-              <div class="diff-icon">💡</div>
-              <p class="diff-name">Des méthodes issues du coaching pour favoriser les prises de conscience et le passage à l'action</p>
+              <div class="diff-icon"><img src="illustrations/inventing.svg" alt=""></div>
+              <p class="diff-name">Des méthodes issues du <strong class="diff-kw">coaching</strong> pour favoriser les <strong class="diff-kw">prises de conscience</strong> et le <strong class="diff-kw">passage à l'action</strong></p>
             </div>
             <div class="diff-item">
-              <div class="diff-icon">🤝</div>
-              <p class="diff-name">Une capacité à allier bienveillance, écoute et challenge constructif</p>
+              <div class="diff-icon"><img src="illustrations/business-deal.svg" alt=""></div>
+              <p class="diff-name">Une capacité à allier <strong class="diff-kw">bienveillance</strong>, <strong class="diff-kw">écoute</strong> et <strong class="diff-kw">challenge constructif</strong></p>
             </div>
             <div class="diff-item">
-              <div class="diff-icon">🏗️</div>
-              <p class="diff-name">Une expérience concrète du management et des réalités du terrain</p>
+              <div class="diff-icon"><img src="illustrations/upgrade.svg" alt=""></div>
+              <p class="diff-name">Une <strong class="diff-kw">expérience concrète</strong> du management et des réalités du <strong class="diff-kw">terrain</strong></p>
             </div>
           </div>
         </div>
@@ -2281,7 +2394,7 @@
   <section class="testimonials" id="testimonials">
     <div class="container">
       <div class="testimonials-header">
-        <span class="section-label reveal">✦ Témoignages</span>
+        <span class="section-label reveal"><span class="section-star"></span> Témoignages</span>
         <h2 class="section-title reveal">Ils l'ont fait.<br/>Ils le disent.</h2>
       </div>
       <div class="testimonials-grid">
@@ -2389,7 +2502,7 @@
   <section class="faq-section" id="faq">
     <div class="container">
       <div class="faq-header">
-        <span class="section-label reveal">✦ FAQ</span>
+        <span class="section-label reveal"><span class="section-star"></span> FAQ</span>
         <h2 class="section-title reveal">Questions fréquentes.</h2>
         <p class="section-sub reveal">Tout ce que vous voulez savoir avant de vous lancer.</p>
       </div>
@@ -2411,7 +2524,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-a">
-            <p>Le premier échange de 30 minutes est entièrement gratuit et sans engagement. Les programmes sont ensuite construits sur-mesure selon vos objectifs. Contactez-nous à <a href="mailto:hello@billi.coach">hello@billi.coach</a> pour recevoir une proposition adaptée.</p>
+            <p>Le premier échange de 30 minutes est entièrement gratuit et sans engagement. Les programmes sont ensuite construits sur-mesure selon vos objectifs. Contactez-nous via le <a href="#" class="open-contact-modal" style="color:inherit;text-decoration:underline;">formulaire de contact</a> pour recevoir une proposition adaptée.</p>
           </div>
         </div>
 
@@ -2463,18 +2576,18 @@
   <section class="cta-section" id="contact">
     <div class="cta-glow"></div>
     <div class="container" style="position:relative;">
-      <span class="section-label reveal">✦ Passez à l'action</span>
+      <span class="section-label reveal"><span class="section-star"></span> Passez à l'action</span>
       <h2 class="cta-title reveal">
         Prêt à changer<br/>
         la <span class="green" id="cta-donne">donne</span> ?
       </h2>
-      <p class="cta-sub reveal">Un premier échange de 30 min, gratuit, sans engagement. Juste pour voir si on peut faire quelque chose de grand ensemble.</p>
+      <p class="cta-sub reveal"><strong style="color:#7fff00; font-weight:800;">Premier RDV offert</strong> — Un échange de 30 min, sans engagement. Juste pour voir si on peut faire quelque chose de grand ensemble.</p>
       <div class="cta-actions reveal">
-        <a href="mailto:hello@billi.coach" class="btn btn-primary" style="font-size:19px; padding:18px 36px;">
+        <a href="#" class="btn btn-primary open-contact-modal" style="font-size:19px; padding:18px 36px;">
           Réserver mon appel gratuit
           <svg width="18" height="18" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="mailto:hello@billi.coach" class="btn btn-outline-white" style="font-size:19px; padding:18px 36px;">Envoyer un message</a>
+        <a href="#" class="btn btn-outline-white open-contact-modal" style="font-size:19px; padding:18px 36px;">Envoyer un message</a>
       </div>
       <p class="cta-note reveal">Réponse sous 24h · Aucun engagement · Premier RDV offert</p>
     </div>
@@ -2507,9 +2620,9 @@
         <div>
           <p class="footer-col-title">Contact</p>
           <ul class="footer-links">
-            <li><a href="mailto:hello@billi.coach">hello@billi.coach</a></li>
+            <li><a href="#" class="open-contact-modal">hello@billi.coach</a></li>
             <li><a href="#">LinkedIn</a></li>
-            <li><a href="#contact">Prendre RDV</a></li>
+            <li><a href="#" class="open-contact-modal">Prendre RDV</a></li>
           </ul>
         </div>
       </div>
@@ -2560,7 +2673,7 @@
           }
         } catch {
           const d = Object.fromEntries(new FormData(heroForm));
-          window.location.href = `mailto:billitis@billi-consulting.com?subject=Demande de coaching — ${d.prenom} ${d.nom}&body=Prénom: ${d.prenom}%0ANom: ${d.nom}%0AEntreprise: ${d.entreprise}%0AEmail: ${d.email}%0ATéléphone: ${d.tel}`;
+          openModal();
         }
       });
     }
@@ -3131,6 +3244,118 @@
           gsap.to(icon,   { rotation: 0, duration: 0.25, ease: 'power2.out' });
         }
       });
+    });
+  </script>
+
+  <!-- ─── FAB CONTACT ──────────────────────────────────────── -->
+  <button class="contact-fab" id="contact-fab" aria-label="Prendre contact" hidden>
+    <svg width="22" height="22" fill="none" viewBox="0 0 24 24">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- ─── MODAL CONTACT ─────────────────────────────────────── -->
+  <div class="contact-modal-overlay" id="contact-modal" hidden aria-modal="true" role="dialog">
+    <div class="contact-modal-card">
+      <button class="contact-modal-close" id="contact-modal-close" aria-label="Fermer">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="contact-card-header">
+        <p class="contact-card-title">Prendre contact</p>
+        <p class="contact-card-sub">Premier échange gratuit · Réponse sous 24h</p>
+      </div>
+      <form class="contact-form" id="modal-form"
+        action="https://formspree.io/f/billitis@billi-consulting.com"
+        method="POST" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="modal-prenom">Prénom</label>
+            <input type="text" id="modal-prenom" name="prenom" placeholder="Marie" required autocomplete="given-name"/>
+          </div>
+          <div class="form-field">
+            <label for="modal-nom">Nom</label>
+            <input type="text" id="modal-nom" name="nom" placeholder="Dupont" required autocomplete="family-name"/>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="modal-entreprise">Entreprise</label>
+          <input type="text" id="modal-entreprise" name="entreprise" placeholder="Nom de votre entreprise" autocomplete="organization"/>
+        </div>
+        <div class="form-field">
+          <label for="modal-email">Email professionnel</label>
+          <input type="email" id="modal-email" name="email" placeholder="marie@entreprise.com" required autocomplete="email"/>
+        </div>
+        <div class="form-field">
+          <label for="modal-tel">Téléphone</label>
+          <input type="tel" id="modal-tel" name="tel" placeholder="+33 6 00 00 00 00" autocomplete="tel"/>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">
+          Envoyer ma demande
+          <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+      <div class="form-success" id="modal-form-success" hidden>
+        <div class="form-success-icon">✓</div>
+        <p class="form-success-title">Message envoyé !</p>
+        <p class="form-success-sub">On revient vers vous sous 24h.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── FAB + MODAL ──────────────────────────────────────────
+    const fab        = document.getElementById('contact-fab');
+    const modal      = document.getElementById('contact-modal');
+    const modalClose = document.getElementById('contact-modal-close');
+    const heroRight  = document.querySelector('.hero-right');
+
+    // Show FAB when hero form leaves viewport
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries[0].isIntersecting;
+      fab.hidden = visible;
+      if (visible) closeModal();
+    }, { threshold: 0.1 });
+    observer.observe(heroRight);
+
+    fab.addEventListener('click', () => openModal());
+    modalClose.addEventListener('click', () => closeModal());
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // All .open-contact-modal links
+    document.addEventListener('click', e => {
+      const trigger = e.target.closest('.open-contact-modal');
+      if (trigger) { e.preventDefault(); openModal(); }
+    });
+
+    function openModal() {
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => modal.classList.add('is-open'));
+      modal.querySelector('input').focus();
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.addEventListener('transitionend', () => {
+        if (!modal.classList.contains('is-open')) modal.hidden = true;
+        document.body.style.overflow = '';
+      }, { once: true });
+    }
+
+    // Modal form submit
+    document.getElementById('modal-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const form = e.target;
+      const btn  = form.querySelector('.form-submit');
+      btn.disabled = true;
+      btn.textContent = 'Envoi…';
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (res.ok) {
+          form.hidden = true;
+          document.getElementById('modal-form-success').hidden = false;
+        } else { btn.disabled = false; btn.textContent = 'Réessayer'; }
+      } catch { btn.disabled = false; btn.textContent = 'Réessayer'; }
     });
   </script>
 </body>
