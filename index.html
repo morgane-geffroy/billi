@@ -1842,21 +1842,19 @@
       .about-right { transform: none !important; opacity: 1 !important; width: 100%; }
       .differentiators { padding: 32px 24px; position: static; width: 100%; box-sizing: border-box; }
 
-      .process-steps { width: 100%; margin-left: 0; margin-right: 0; }
       .process-step {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
         background: rgba(22,51,0,0.07);
         border-radius: 10px;
-        padding: 14px 16px 14px 52px;
+        padding: 16px;
         border-bottom: none;
-        position: relative;
+        margin-bottom: 8px;
       }
-      .process-step + .process-step { margin-top: 8px; }
+      .process-step:last-child { margin-bottom: 0; }
       .step-number {
-        position: absolute;
-        left: 14px; top: 16px;
+        position: static;
         transform: none;
         width: auto; height: auto;
         background: none;
@@ -1865,9 +1863,10 @@
         font-weight: 900;
         color: var(--color-dark-green);
         opacity: 0.45;
-        margin-top: 0;
+        margin: 0;
+        justify-content: flex-start;
       }
-      .step-content-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--color-dark-green); }
+      .step-content-title { font-size: 14px; font-weight: 600; margin-bottom: 2px; color: var(--color-dark-green); }
       .step-content-desc { font-size: 13px; color: var(--color-warm-dark); line-height: 1.4; }
       .diff-title { font-size: 18px; }
 
