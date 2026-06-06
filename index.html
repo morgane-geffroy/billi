@@ -8,6 +8,7 @@
   <title>Billi. — Coach Professionnel & Formation Leadership | Paris</title>
   <meta name="description" content="Billi. accompagne particuliers et entreprises avec du coaching professionnel, des formations management certifiées Qualiopi et du bilan de compétences. Premier échange gratuit." />
   <meta name="keywords" content="coaching professionnel, coach carrière, formation leadership, coaching reconversion, coach auto-entrepreneur, formation professionnels Paris" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="canonical" href="https://billi.coach/" />
   <meta name="robots" content="index, follow" />
 
@@ -171,9 +172,9 @@
       --font-body:    'Inter', Helvetica, Arial, sans-serif;
 
       --radius-pill:   9999px;
-      --radius-large:  40px;
-      --radius-medium: 30px;
-      --radius-card:   16px;
+      --radius-large:  20px;
+      --radius-medium: 16px;
+      --radius-card:   8px;
 
       --shadow-ring: rgba(14, 15, 12, 0.12) 0px 0px 0px 1px;
 
@@ -529,7 +530,7 @@
       color: var(--color-near-black);
       background: var(--color-bg-warm);
       border: 1px solid rgba(14,15,12,0.14);
-      border-radius: 10px;
+      border-radius: 5px;
       padding: 11px 14px;
       outline: none;
       transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
@@ -670,9 +671,7 @@
     }
 
     .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      display: inline-block;
       background: var(--color-mint);
       color: var(--color-dark-green);
       font-size: 13px;
@@ -1446,15 +1445,6 @@
       margin-right: 2px;
     }
 
-    .section-star {
-      display: inline-block;
-      width: 7px; height: 7px;
-      background: var(--color-mint);
-      border-radius: 1px;
-      transform: rotate(45deg);
-      vertical-align: middle;
-      margin-right: 4px;
-    }
 
     .pitch-audience {
       margin-top: 40px;
@@ -1484,7 +1474,7 @@
       color: var(--color-dark-green);
       padding: 12px 14px 12px 44px;
       background: rgba(22,51,0,0.07);
-      border-radius: 10px;
+      border-radius: 5px;
       line-height: 1.4;
       position: relative;
       will-change: transform;
@@ -1848,7 +1838,7 @@
         flex-direction: column;
         gap: 6px;
         background: rgba(22,51,0,0.07);
-        border-radius: 10px;
+        border-radius: 5px;
         padding: 16px;
         border-bottom: none;
         margin-bottom: 8px;
@@ -2326,13 +2316,13 @@
     <div class="container">
       <div class="process-header">
         <div>
-          <span class="section-label reveal"><span class="section-star"></span> Comment ça marche</span>
+          <span class="section-label reveal">Comment ça marche</span>
           <h2 class="section-title reveal">Simple.<br/>Efficace.<br/><em>Concret.</em></h2>
           <p class="section-sub reveal">Pas de méthodo absconse. Une approche directe qui respecte votre temps et votre intelligence.</p>
         </div>
         <div class="process-right reveal">
           <div class="process-card">
-            <p class="process-card-label"><span class="section-star"></span> Témoignage</p>
+            <p class="process-card-label">Témoignage</p>
             <p class="process-card-quote">"En 3 sessions avec Billi., j'ai obtenu plus de clarté sur ma carrière qu'en 2 ans à y réfléchir seul."</p>
             <div class="process-card-author">
               <div class="process-author-avatar"><img src="https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Marc D."/></div>
@@ -2383,7 +2373,7 @@
     <div class="container">
       <div class="about-layout">
         <div class="about-left">
-          <span class="section-label reveal"><span class="section-star"></span> Pourquoi Billi Consulting ?</span>
+          <span class="section-label reveal">Pourquoi Billi Consulting ?</span>
           <h2 class="section-title reveal">Une approche<br/>humaine,<br/>concrète.</h2>
           <p class="about-intro reveal">Passionnée par les relations humaines, j'ai évolué plusieurs années au sein de la branche Famille de la Sécurité sociale, où j'ai managé des équipes et accompagné des managers dans des contextes parfois complexes, avec de forts enjeux humains, organisationnels et de performance.</p>
           <p class="about-intro reveal">Cette expérience de terrain m'a permis de développer une approche à la fois humaine, structurée et concrète de l'accompagnement.</p>
@@ -2429,7 +2419,7 @@
   <section class="testimonials" id="testimonials">
     <div class="container">
       <div class="testimonials-header">
-        <span class="section-label reveal"><span class="section-star"></span> Témoignages</span>
+        <span class="section-label reveal">Témoignages</span>
         <h2 class="section-title reveal">Ils l'ont fait.<br/>Ils le disent.</h2>
       </div>
       <div class="testimonials-grid">
@@ -2537,7 +2527,7 @@
   <section class="faq-section" id="faq">
     <div class="container">
       <div class="faq-header">
-        <span class="section-label reveal"><span class="section-star"></span> FAQ</span>
+        <span class="section-label reveal">FAQ</span>
         <h2 class="section-title reveal">Questions fréquentes.</h2>
         <p class="section-sub reveal">Tout ce que vous voulez savoir avant de vous lancer.</p>
       </div>
@@ -2611,7 +2601,7 @@
   <section class="cta-section" id="contact">
     <div class="cta-glow"></div>
     <div class="container" style="position:relative;">
-      <span class="section-label reveal"><span class="section-star"></span> Passez à l'action</span>
+      <span class="section-label reveal">Passez à l'action</span>
       <h2 class="cta-title reveal">
         Prêt à changer<br/>
         la <span class="green" id="cta-donne">donne</span> ?
@@ -3198,10 +3188,11 @@
       });
     })();
 
-    /* ── Testimonials carousel — infinite auto-scroll ───────────── */
+    /* ── Testimonials carousel — infinite auto-scroll + touch drag ── */
     (function initCarousel() {
       const track = document.querySelector('.testimonials-track');
       if (!track) return;
+      const wrap = track.parentElement;
 
       /* Clone all cards for seamless loop */
       Array.from(track.querySelectorAll('.testimonial-card')).forEach(card => {
@@ -3216,16 +3207,17 @@
         return (card.offsetWidth + 16) * 10;
       }
 
-      /* Continuous tween — repeat resets x to 0 seamlessly */
+      /* Build tween from an optional starting x (between -w and 0) */
       let tween;
-      function buildTween() {
+      function buildTween(fromX) {
         const w = singleSetWidth();
+        const from = fromX ?? 0;
+        if (fromX !== undefined) gsap.set(track, { x: from });
         tween = gsap.to(track, {
           x: -w,
-          duration: w / 55, /* ~55 px/s */
+          duration: Math.max((w + from) / 55, 0.1), /* ~55 px/s */
           ease: 'none',
-          repeat: -1,
-          onRepeat() { gsap.set(track, { x: 0 }); }
+          onComplete() { gsap.set(track, { x: 0 }); buildTween(); }
         });
       }
       buildTween();
@@ -3233,6 +3225,43 @@
       /* Pause on hover */
       track.addEventListener('mouseenter', () => tween.pause());
       track.addEventListener('mouseleave', () => tween.play());
+
+      /* Touch drag — direction-aware, non-passive pour pouvoir bloquer le scroll page */
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let tweenX = 0;
+      let isHoriz = null; // déterminé au premier move
+
+      wrap.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        tweenX = gsap.getProperty(track, 'x');
+        isHoriz = null;
+        tween.pause();
+      }, { passive: true });
+
+      wrap.addEventListener('touchmove', e => {
+        const dx = e.touches[0].clientX - touchStartX;
+        const dy = e.touches[0].clientY - touchStartY;
+
+        if (isHoriz === null) isHoriz = Math.abs(dx) > Math.abs(dy);
+
+        if (!isHoriz) { tween.play(); return; } /* swipe vertical → rend la main */
+
+        e.preventDefault(); /* bloque le scroll page pour les swipes horizontaux */
+        const w = singleSetWidth();
+        let newX = tweenX + dx;
+        while (newX > 0)  newX -= w;
+        while (newX < -w) newX += w;
+        gsap.set(track, { x: newX });
+      }, { passive: false }); /* non-passive obligatoire pour preventDefault */
+
+      wrap.addEventListener('touchend', () => {
+        if (!isHoriz) return;
+        const x = gsap.getProperty(track, 'x');
+        tween.kill();
+        buildTween(x);
+      }, { passive: true });
 
       window.addEventListener('resize', () => {
         tween.kill();
