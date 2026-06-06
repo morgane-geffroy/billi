@@ -1842,13 +1842,28 @@
       .differentiators { padding: 32px 24px; position: static; width: 100%; box-sizing: border-box; }
 
       .process-step {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 24px 0;
+        display: block;
+        background: rgba(22,51,0,0.07);
+        border-radius: 10px;
+        padding: 14px 16px 14px 52px;
+        border-bottom: none;
+        position: relative;
       }
-      .process-step > div { width: 100%; min-width: 0; }
-      .step-number { width: 40px; height: 40px; font-size: 15px; margin-top: 0; }
+      .process-step + .process-step { margin-top: 8px; }
+      .step-number {
+        position: absolute;
+        left: 14px; top: 50%;
+        transform: translateY(-50%);
+        width: auto; height: auto;
+        background: none;
+        border-radius: 0;
+        font-size: 11px;
+        font-weight: 900;
+        color: var(--color-dark-green);
+        opacity: 0.45;
+      }
+      .step-content-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--color-dark-green); }
+      .step-content-desc { font-size: 13px; color: var(--color-warm-dark); line-height: 1.4; }
       .diff-title { font-size: 18px; }
 
       .audience-grid { grid-template-columns: 1fr; }
@@ -1858,7 +1873,7 @@
       .formation-card-cta { grid-column: span 1; flex-direction: column; }
 
       .tabs-switcher { width: 100%; }
-      .tab-btn { text-align: center; }
+      .tab-btn { text-align: center; font-size: 14px; padding: 11px 16px; }
 
     }
 
@@ -1885,7 +1900,8 @@
       }
 
       .formations-grid { grid-template-columns: 1fr; }
-      .tabs-switcher { flex-direction: column; }
+      .tabs-switcher { flex-direction: row; width: 100%; }
+      .tab-btn { flex: 1; font-size: 13px; padding: 10px 8px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
