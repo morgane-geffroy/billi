@@ -65,8 +65,8 @@
         ],
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "60",
+          "ratingValue": "5",
+          "reviewCount": "16",
           "bestRating": "5",
           "worstRating": "1"
         }
@@ -2259,7 +2259,9 @@
     }
     .carousel-dot.active { background: var(--color-dark-green); transform: scale(1.4); }
 
-    /* ── Avatar photos ───────────────────────────────────────────── */
+    /* ── Avatars à initiales (aucune photo de client diffusée) ───── */
+    .t-avatar-initials { background: var(--color-mint); }
+
     .t-avatar,
     .process-author-avatar { overflow: hidden; }
     .t-avatar img,
@@ -2316,10 +2318,10 @@
           </p>
           <div class="hero-social-proof fade-up fade-up-4">
             <div class="hero-avatars">
-              <div class="avatar avatar-1"><img src="https://images.pexels.com/photos/325685/pexels-photo-325685.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt=""/></div>
-              <div class="avatar avatar-2"><img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt=""/></div>
-              <div class="avatar avatar-3"><img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt=""/></div>
-              <div class="avatar avatar-4"><img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt=""/></div>
+              <div class="avatar avatar-1" aria-hidden="true">I</div>
+              <div class="avatar avatar-2" aria-hidden="true">P</div>
+              <div class="avatar avatar-3" aria-hidden="true">J</div>
+              <div class="avatar avatar-4" aria-hidden="true">V</div>
             </div>
             <div class="hero-proof-text">
               <strong>+60 professionnels</strong> ont déjà transformé leur trajectoire avec Billi.
@@ -2408,12 +2410,11 @@
       <div class="intro-layout">
 
         <div class="intro-photo-wrap reveal">
-          <!-- PHOTO TEMPORAIRE — remplacer par photos/billitis-garnier.jpg -->
           <img
             class="intro-photo"
-            src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=900"
+            src="photos/billitis-garnier.jpg"
             alt="Billitis Garnier, consultante en bilan de compétences, formatrice en management et coach professionnelle"
-            width="900" height="1125"
+            width="900" height="1349"
             loading="lazy"
           />
           <div class="intro-photo-badge">
@@ -2636,12 +2637,12 @@
         <div class="process-right reveal">
           <div class="process-card">
             <p class="process-card-label">Témoignage</p>
-            <p class="process-card-quote">"En 3 sessions avec Billi., j'ai obtenu plus de clarté sur ma carrière qu'en 2 ans à y réfléchir seul."</p>
+            <p class="process-card-quote">«&nbsp;À un moment de questionnements, de doutes et de blocages, cet accompagnement a été une véritable chance. Il m'a permis de comprendre mon fonctionnement, d'identifier mes ressources et de trouver les clés pour dépasser mes freins.&nbsp;»</p>
             <div class="process-card-author">
-              <div class="process-author-avatar"><img src="https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Marc D."/></div>
+              <div class="process-author-avatar" aria-hidden="true">I</div>
               <div>
-                <p class="process-author-name">Marc D.</p>
-                <p class="process-author-role">Directeur Produit, Scale-up Paris</p>
+                <p class="process-author-name">Isaure</p>
+                <p class="process-author-role">Coaching professionnel</p>
               </div>
             </div>
           </div>
@@ -2742,97 +2743,78 @@
 
             <div class="testimonial-card">
               <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"J'hésitais depuis 2 ans à quitter mon poste. Après 2 mois avec Billi., j'avais signé mon nouveau contrat. L'approche est directe, bienveillante, et surtout — ça marche."</p>
+              <p class="testimonial-text">«&nbsp;Je me suis sentie écoutée et les ateliers proposés étaient pertinents et adaptés à mes besoins. Cet accompagnement m'a permis d'identifier mes forces ainsi que mes axes d'amélioration. Depuis, j'ai gagné en confiance et j'ose davantage prendre position dans mon travail.&nbsp;»</p>
               <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Sophie L."/></div>
-                <div><p class="t-name">Sophie L.</p><p class="t-role">Chef de Projet → Product Manager</p></div>
+                <div class="t-avatar t-avatar-initials" aria-hidden="true">C</div>
+                <div><p class="t-name">Cliente accompagnée</p><p class="t-role">Coaching professionnel</p></div>
               </div>
             </div>
 
             <div class="testimonial-card">
               <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"La formation leadership pour mon équipe a tout changé. Moins de conflits, plus d'autonomie, de meilleures décisions. ROI immédiat, sans blabla."</p>
+              <p class="testimonial-text">«&nbsp;J'ai compris que j'avais déjà toutes les ressources en moi. Grâce à cet accompagnement, j'ai gagné en confiance, osé prendre ma place et assumer pleinement mon leadership. Une véritable révélation.&nbsp;»</p>
               <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Thomas R."/></div>
-                <div><p class="t-name">Thomas R.</p><p class="t-role">CTO, Startup SaaS</p></div>
+                <div class="t-avatar t-avatar-initials" aria-hidden="true">I</div>
+                <div><p class="t-name">Isaure</p><p class="t-role">Coaching professionnel</p></div>
               </div>
             </div>
 
             <div class="testimonial-card">
               <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"Je cherchais quelqu'un qui parle vrai, pas quelqu'un qui valide tout. Billi. challenge mes angles morts et ça change tout à ma façon d'avancer."</p>
+              <p class="testimonial-text">«&nbsp;Une formation très enrichissante, portée par une intervenante dynamique et bienveillante. Les explications sont claires, les échanges stimulants et les outils immédiatement utilisables dans la pratique professionnelle.&nbsp;»</p>
               <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Aurélie M."/></div>
-                <div><p class="t-name">Aurélie M.</p><p class="t-role">Directrice Marketing, Grand Groupe</p></div>
+                <div class="t-avatar t-avatar-initials" aria-hidden="true">P</div>
+                <div><p class="t-name">Prescillia</p><p class="t-role">Formation posture professionnelle</p></div>
               </div>
             </div>
 
             <div class="testimonial-card">
               <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"En 3 sessions, j'ai obtenu plus de clarté sur ma carrière qu'en 2 ans à y réfléchir seul. Une méthode structurée, un interlocuteur qui pousse vraiment."</p>
+              <p class="testimonial-text">«&nbsp;Billitis sait mobiliser son groupe et donner envie de participer. Son énergie, sa pédagogie et sa capacité à rendre les notions concrètes font toute la différence.&nbsp;»</p>
               <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Marc D."/></div>
-                <div><p class="t-name">Marc D.</p><p class="t-role">Directeur Produit, Scale-up Paris</p></div>
+                <div class="t-avatar t-avatar-initials" aria-hidden="true">J</div>
+                <div><p class="t-name">Jodie</p><p class="t-role">Formation bientraitance</p></div>
               </div>
             </div>
 
             <div class="testimonial-card">
               <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"Nous avons déployé les formations Billi. sur 3 sites. Les managers repartent avec des outils concrets et une posture transformée. L'impact est mesurable dès le trimestre suivant."</p>
+              <p class="testimonial-text">«&nbsp;J'ai particulièrement apprécié le dynamisme de l'animation et la qualité des échanges. Une formation enrichissante qui permet de prendre du recul sur sa pratique professionnelle.&nbsp;»</p>
               <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Claire B."/></div>
-                <div><p class="t-name">Claire B.</p><p class="t-role">DRH, Groupe L'Oréal</p></div>
+                <div class="t-avatar t-avatar-initials" aria-hidden="true">V</div>
+                <div><p class="t-name">Valentine</p><p class="t-role">Formation posture bientraitante</p></div>
               </div>
             </div>
 
             <div class="testimonial-card">
               <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"J'avais l'idée depuis 3 ans mais pas le courage de sauter le pas. Le bilan de compétences m'a donné les clés et la confiance pour lancer mon activité. 6 mois plus tard, j'ai mes premiers clients."</p>
+              <p class="testimonial-text">«&nbsp;Une formatrice agréable, investie et à l'écoute. Les contenus sont accessibles et permettent de découvrir de nouvelles façons d'aborder son métier.&nbsp;»</p>
               <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Julien F."/></div>
-                <div><p class="t-name">Julien F.</p><p class="t-role">Consultant → Fondateur</p></div>
+                <div class="t-avatar t-avatar-initials" aria-hidden="true">M</div>
+                <div><p class="t-name">Megan</p><p class="t-role">Formation posture professionnelle</p></div>
               </div>
             </div>
 
             <div class="testimonial-card">
               <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"Après 12 ans dans le public, je ne savais plus si je voulais rester ou partir. Billi. m'a aidée à clarifier mes vraies motivations — sans jugement, avec une vraie exigence."</p>
+              <p class="testimonial-text">«&nbsp;Très bonne formation, animée avec professionnalisme. Billitis sait intéresser le groupe et maintenir l'engagement tout au long de la journée.&nbsp;»</p>
               <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Nadia K."/></div>
-                <div><p class="t-name">Nadia K.</p><p class="t-role">Cheffe de projet, Sécurité sociale</p></div>
+                <div class="t-avatar t-avatar-initials" aria-hidden="true">O</div>
+                <div><p class="t-name">Orlane</p><p class="t-role">Formation posture bientraitante</p></div>
               </div>
             </div>
 
             <div class="testimonial-card">
               <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"Le coaching dirigeants a changé ma façon de piloter l'équipe. Moins de micro-management, plus de confiance donnée. L'entreprise s'en ressent directement."</p>
+              <p class="testimonial-text">«&nbsp;Cette formation nous permet de nous remettre en question et nous aide à nous améliorer sur notre pratique du travail au quotidien.&nbsp;»</p>
               <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Antoine P."/></div>
-                <div><p class="t-name">Antoine P.</p><p class="t-role">CEO, Startup Greentech</p></div>
+                <div class="t-avatar t-avatar-initials" aria-hidden="true">A</div>
+                <div><p class="t-name">Anne-Sophie</p><p class="t-role">Formation professionnelle</p></div>
               </div>
             </div>
 
-            <div class="testimonial-card">
-              <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"Une prise de poste réussie grâce à Billi. — j'avais les compétences mais pas encore la posture. Aujourd'hui mon équipe me suit, et ça n'avait rien d'évident au départ."</p>
-              <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Sandrine D."/></div>
-                <div><p class="t-name">Sandrine D.</p><p class="t-role">Manager, BNP Paribas</p></div>
-              </div>
-            </div>
-
-            <div class="testimonial-card">
-              <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-              <p class="testimonial-text">"Ingénieur depuis 8 ans, l'envie d'entreprendre était là depuis toujours. Billi. a mis des mots sur ce que je voulais vraiment — et un plan d'action pour y aller."</p>
-              <div class="testimonial-author">
-                <div class="t-avatar"><img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=80&h=80" alt="Romain L."/></div>
-                <div><p class="t-name">Romain L.</p><p class="t-role">Ingénieur → Entrepreneur</p></div>
-              </div>
-            </div>
-
-          </div><!-- .testimonials-track -->
-        </div><!-- .testimonials-carousel-wrap -->
-
+          </div>
+        </div>
       </div>
     </div>
   </section>
